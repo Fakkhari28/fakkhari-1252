@@ -5,7 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import { UsersModule } from './modules/users/users.module';
-import { CategoryModule } from './modules/category/category.module';
+import { CategoriesModule } from './modules/category/category.module';
 
 @Module({
   imports: [
@@ -20,7 +20,7 @@ import { CategoryModule } from './modules/category/category.module';
       inject: [ConfigService],
     }),
     UsersModule,
-    CategoryModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
