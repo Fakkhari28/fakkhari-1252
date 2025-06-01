@@ -34,8 +34,12 @@ export class UsersService {
     return this.repo.find();
   }
 
-  findOne(id: number) {
-    return this.repo.findOneBy({ id });
+  async findOne(id: number) {
+    const user = await this.repo.findOneBy({ id });
+    return {
+      ...user,
+      password: undefined, // Exclude password from the response
+    }
   }
 
   findByEmail(email: string) {
